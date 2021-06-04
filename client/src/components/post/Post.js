@@ -1,7 +1,9 @@
 import React from 'react';
 import './post.css';
 
-const Post = () => {
+const Post = ({ post }) => {
+  const { title, createdAt } = post;
+  console.log(post);
   return (
     <div className='post'>
       <img
@@ -14,11 +16,9 @@ const Post = () => {
           <span className='postCat'>Music</span>
           <span className='postCat'>Life</span>
         </div>
-        <span className='postTitle'>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, fuga.
-        </span>
+        <span className='postTitle'>{title}</span>
         <hr />
-        <span className='postDate'>1 hr ago</span>
+        <span className='postDate'>{createdAt}</span>
       </div>
       <p className='postDesc'>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit ducimus
