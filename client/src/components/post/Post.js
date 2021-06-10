@@ -5,10 +5,10 @@ import { Link } from 'react-router-dom';
 
 const Post = ({ post }) => {
   const { title, createdAt, description, photo, categories, _id } = post;
-  console.log(post);
+  const publicFolder = 'http://localhost:9000/images/';
   return (
     <div className='post'>
-      {photo && <img className='postImg' src='{photo}' alt='' />}
+      {photo && <img className='postImg' src={publicFolder + photo} alt='' />}
       <div className='postInfo'>
         <div className='postCats'>
           {categories.map((category) => (

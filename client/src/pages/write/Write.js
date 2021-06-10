@@ -35,14 +35,22 @@ const Write = () => {
   };
 
   return (
-    <div className='writeImg'>
-      <img src='' alt='' />
+    <div className='write'>
+      {file && (
+        <img className='writeImg' src={URL.createObjectURL(file)} alt='' />
+      )}
+
       <form className='writeForm' onSubmit={handlePost}>
         <div className='writeFormGroup'>
           <label htmlFor='fileInput'>
             <i className='writeIcon far fa-plus-square'></i>
           </label>
-          <input type='file' id='fileInput' style={{ display: 'none' }} />
+          <input
+            type='file'
+            id='fileInput'
+            style={{ display: 'none' }}
+            onChange={(e) => setFile(e.target.files[0])}
+          />
           <input
             onChange={(e) => setTitle(e.target.value)}
             type='text'
