@@ -6,6 +6,8 @@ import { Link } from 'react-router-dom';
 const Post = ({ post }) => {
   const { title, description, photo, categories, _id, price, duration } = post;
   const publicFolder = 'http://localhost:9000/images/';
+  console.log(post.ratings.stars);
+
   return (
     <div className='post'>
       {photo && <img className='postImg' src={publicFolder + photo} alt='' />}
@@ -25,7 +27,11 @@ const Post = ({ post }) => {
       <p className='postDesc'>{description}</p>
       <p>Cost: USD {price}</p>
       <p>Duration: {duration} min</p>
-  
+      <p>{post.ratings.length} reviews</p>
+
+      {/* {post.ratings.map((p) => (
+        // <p>{p.stars}</p>
+      ))} */}
     </div>
   );
 };
