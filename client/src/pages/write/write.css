@@ -16,9 +16,6 @@
 
 .writeFormGroup {
   margin-left: 150px;
-  display: flex;
-  align-items: center;
-  display: flex;
   align-items: center;
 }
 
@@ -30,14 +27,10 @@
 }
 
 .writeInput {
-  font-size: 30px;
+  font-size: 20px;
   border: none;
   padding: 20px;
   width: 70vw;
-}
-
-.writeInput:focus {
-  outline: none;
 }
 
 .writeSubmit {
@@ -54,5 +47,8 @@
 
 .writeText {
   font-size: 20px;
-  height: 100vh;
+  padding: 10px;
+  border:none;
+  
 }
+

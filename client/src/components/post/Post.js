@@ -4,7 +4,7 @@ import { format } from 'timeago.js';
 import { Link } from 'react-router-dom';
 
 const Post = ({ post }) => {
-  const { title, createdAt, description, photo, categories, _id } = post;
+  const { title, description, photo, categories, _id, price, duration } = post;
   const publicFolder = 'http://localhost:9000/images/';
   return (
     <div className='post'>
@@ -20,9 +20,12 @@ const Post = ({ post }) => {
         </Link>
 
         <hr />
-        <span className='postDate'>{format(createdAt)}</span>
+        {/* <span className='postDate'>{format(createdAt)}</span> */}
       </div>
       <p className='postDesc'>{description}</p>
+      <p>Cost: USD {price}</p>
+      <p>Duration: {duration} min</p>
+  
     </div>
   );
 };

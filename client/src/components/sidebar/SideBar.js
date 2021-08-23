@@ -16,18 +16,7 @@ const SideBar = () => {
   }, []);
   return (
     <div className='sidebar'>
-      <div className='sidebarItem'>
-        <span className='sidebarTitle'>ABOUT ME</span>
-        <img
-          src='https://www.cwazores.com/Images/swd_george_karbus_02.jpg'
-          alt=''
-        />
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Non vitae
-          cumque fuga repellat. Excepturi laboriosam suscipit deleniti illo qui,
-          labore voluptatum at!
-        </p>
-      </div>
+  
       <div className='sidebarItem'>
         <span className='sidebarTitle'>CATEGORIES</span>
         {categories.map((category) => (

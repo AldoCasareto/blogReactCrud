@@ -4,6 +4,8 @@ import { useLocation } from 'react-router';
 import { Link } from 'react-router-dom';
 import './singlePost.css';
 import { Context } from '../../context/Context';
+import Ratings from '../ratings/Ratings';
+import dateFormat from 'dateformat';
 
 const SinglePost = () => {
   const [post, setPost] = useState({});
@@ -14,6 +16,11 @@ const SinglePost = () => {
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [updated, setUpdated] = useState(false);
+  const [price, setPrice] = useState('');
+  const [duration, setDuration] = useState('');
+
+  const date = new Date(post.selectedDate);
+  console.log('date', date);
 
   const handleDelete = async () => {
     try {
@@ -30,8 +37,10 @@ const SinglePost = () => {
         username: user.username,
         title,
         description,
+        price,
+        duration,
       });
-      setUpdated(false)
+      setUpdated(false);
     } catch (error) {}
   };
 
@@ -41,6 +50,8 @@ const SinglePost = () => {
       setPost(res.data);
       setTitle(res.data.title);
       setDescription(res.data.description);
+      setPrice(res.data.price);
+      setDuration(res.data.duration);
     };
 
     getPost();
@@ -83,13 +94,15 @@ const SinglePost = () => {
         <div className='singlePostInfo'>
           <span className='singlePostAuthor'>
             <Link className='link' to={`/?user=${post.username}`}>
-              Author: {post.username}
+              Instructor: {post.username}
             </Link>
+            <p>short bio: {post.bio}</p>
           </span>
           <span className='singlePostDate'>
             {new Date(post.createdAt).toDateString()}
           </span>
         </div>
+
         {updated ? (
           <textarea
             onChange={(e) => setDescription(e.target.value)}
@@ -97,11 +110,22 @@ const SinglePost = () => {
             value={description}
             name=''
             id=''
-            cols='30'
+            cols='20'
             rows='10'
           ></textarea>
         ) : (
-          <p className='singlePostDesc'>{description}</p>
+          <>
+            <h4>Course Description</h4>
+            <p className='singlePostDesc'> {description}</p>
+            <h4>Cost </h4>
+            <span> € {post.price}</span>
+            <h4>Duration: </h4>
+            <span>{post.duration} min </span>
+            <h4>When?</h4>
+            <span>
+              {date.toDateString()} {date.getHours()}:{date.getMinutes()}
+            </span>
+          </>
         )}
         {updated && (
           <button
@@ -113,6 +137,10 @@ const SinglePost = () => {
           </button>
         )}
       </div>
+      <button type='submit' className='submit'>
+        Book
+      </button>
+      <Ratings id={post._id} />
     </div>
   );
 };

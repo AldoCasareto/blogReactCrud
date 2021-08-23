@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const User = require('../models/User');
 const Post = require('../models/Post');
+const Ratings = require('../models/Ratings')
 
 //create post
 
@@ -59,7 +60,7 @@ router.delete('/:id', async (req, res) => {
         res.status(401).json('you can only delete your post');
       }
     } else {
-      res.status(401).json('you can only delete your post');
+      res.status(403).json('you can only delete your post');
     }
   } catch (error) {
     res.status(500).json(err);

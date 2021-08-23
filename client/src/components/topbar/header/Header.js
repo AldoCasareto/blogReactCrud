@@ -5,12 +5,12 @@ const Header = () => {
   return (
     <div className='header'>
       <div className='headerTitle'>
-        <span className='headerTitleSm'>React & NOT</span>
-        <span className='headerTitleLg'>blog</span>
+        <span className='headerTitleSm'>KidzPass</span>
+        <span className='headerTitleLg'>Activities</span>
       </div>
       <img
         className='headerImg'
-        src='https://justinkelefas.com/wp-content/uploads/2016/04/Sunrise-over-Juno-pier.jpg'
+        src='https://cdn.cogecolive.com/prod-20200330/article_1585576274559900_940x529.jpeg'
         alt='headerImg'
       />
     </div>

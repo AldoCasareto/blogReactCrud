@@ -79,3 +79,13 @@ color: white;
 align-self: flex-end;
 margin-top: 20px;
 }
+
+.submit {
+  color: white;
+  background-color: teal;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+

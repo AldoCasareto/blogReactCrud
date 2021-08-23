@@ -25,6 +25,11 @@ const Topbar = () => {
             </Link>
           </li>
           <li className='topListItem'>
+            <Link className='link' to='/write'>
+              NEW COURSE
+            </Link>
+          </li>{' '}
+          <li className='topListItem'>
             <Link className='link' to='/'>
               ABOUT
             </Link>
@@ -32,11 +37,6 @@ const Topbar = () => {
           <li className='topListItem'>
             <Link className='link' to='/'>
               CONTACT
-            </Link>
-          </li>
-          <li className='topListItem'>
-            <Link className='link' to='/write'>
-              WRITE
             </Link>
           </li>
           <li className='topListItem' onClick={handleLogout}>
