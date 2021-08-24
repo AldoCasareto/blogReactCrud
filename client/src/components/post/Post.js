@@ -35,9 +35,12 @@ const Post = ({ post }) => {
       <p className='postDesc'>{description}</p>
       <p>Cost: USD {price}</p>
       <p>Duration: {duration} min</p>
-      <span>{post.ratings.length} reviews <ReactStars value={averageSum} edit={false}/> </span>
-     
-      {/* <span>{starSum / post.ratings.length}</span> */}
+      <span>
+        {post.ratings.length > 0
+          ? `${post.ratings.length} reviews`
+          : 'No reviews yet!'}
+        <ReactStars value={averageSum} edit={false} />{' '}
+      </span>
     </div>
   );
 };
