@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 import './singlePost.css';
 import { Context } from '../../context/Context';
 import Ratings from '../ratings/Ratings';
-import dateFormat from 'dateformat';
 
 const SinglePost = () => {
   const [post, setPost] = useState({});

@@ -2,10 +2,20 @@ import React from 'react';
 import './post.css';
 
 import { Link } from 'react-router-dom';
+import ReactStars from 'react-rating-stars-component';
 
 const Post = ({ post }) => {
   const { title, description, photo, categories, _id, price, duration } = post;
   const publicFolder = 'http://localhost:9000/images/';
+  console.log(post.ratings.stars);
+
+  let starSum = 0;
+
+  post.ratings.forEach((p) => (starSum += p.stars));
+
+  let averageSum = starSum / post.ratings.length;
+  console.log(averageSum);
+
   return (
     <div className=' w-100 rounded  d-flex justify-content-evenly bg-light post'>
       {photo && <img className='align-self-center  w-50 h-75  rounded imgTransform' src={publicFolder + photo} alt='' />}
@@ -30,11 +40,23 @@ const Post = ({ post }) => {
       </div>
 
 
+
       <Link className="btnIcon align-self-end" to={`/post/${_id}`} >
         <i class="far fa-hand-point-right"></i>
       </Link>
 
-    </div >
+    
+      <p className='postDesc'>{description}</p>
+      <p>Cost: USD {price}</p>
+      <p>Duration: {duration} min</p>
+      <span>
+        {post.ratings.length > 0
+          ? `${post.ratings.length} reviews`
+          : 'No reviews yet!'}
+        <ReactStars value={averageSum} edit={false} isHalf={true} />
+      </span>
+    </div>
+
   );
 };
 
