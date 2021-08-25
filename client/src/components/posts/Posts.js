@@ -4,9 +4,9 @@ import './posts.css';
 
 const Posts = ({ posts }) => {
   return (
-    <div className='posts'>
+    <div className='posts '>
       {posts.map((p) => (
-        <Post post={p}/>
+        <Post post={p} />
       ))}
     </div>
   );

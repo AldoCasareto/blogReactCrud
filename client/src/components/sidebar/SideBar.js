@@ -15,29 +15,20 @@ const SideBar = () => {
     fetchCategories();
   }, []);
   return (
-    <div className='sidebar'>
-  
-      <div className='sidebarItem'>
-        <span className='sidebarTitle'>CATEGORIES</span>
+    <div className='container sidebarItem' >
+      <h1 className='sidebarTitle'>CATEGORIES</h1>
+      <div className="miniGrid text-center">
         {categories.map((category) => (
-          <ul className='sidebarList'>
-            <li className='sidebarListItem'>
-              <Link className='link' to={`/?cat=${category.name}`}>
-                {category.name}
-              </Link>
-            </li>
-          </ul>
+
+
+          <Link className='link' to={`/?cat=${category.name}`}>
+            {category.name}
+          </Link>
+
+
         ))}
       </div>
-      <div className='sidebarItem'>
-        <span className='sidebarTitle'>FOLLOW US</span>
-        <div className='sidebarSocial'>
-          <i className='sidebarIcon fab fa-twitter-square'></i>
-          <i className='sidebarIcon fab fa-facebook-square'></i>
-          <i className='sidebarIcon fab fa-pinterest'></i>
-          <i className='sidebarIcon fab fa-instagram-square'></i>
-        </div>
-      </div>
+
     </div>
   );
 };
