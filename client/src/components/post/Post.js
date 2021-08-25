@@ -36,19 +36,15 @@ const Post = ({ post }) => {
           <h6 className="cardText">Duration: {duration} min</h6>
         </div>
         <h6 className='hostDesc cardText'>{description}</h6>
-
+        <Link className="btnIcon align-self-end" to={`/post/${_id}`} >
+          <i class="far fa-hand-point-right"></i>
+        </Link>
       </div>
 
 
 
-      <Link className="btnIcon align-self-end" to={`/post/${_id}`} >
-        <i class="far fa-hand-point-right"></i>
-      </Link>
 
-    
-      <p className='postDesc'>{description}</p>
-      <p>Cost: USD {price}</p>
-      <p>Duration: {duration} min</p>
+
       <span>
         {post.ratings.length > 0
           ? `${post.ratings.length} reviews`
