@@ -39,7 +39,7 @@ const Post = ({ post }) => {
         {post.ratings.length > 0
           ? `${post.ratings.length} reviews`
           : 'No reviews yet!'}
-        <ReactStars value={averageSum} edit={false} />{' '}
+        <ReactStars value={averageSum} edit={false} isHalf={true} />
       </span>
     </div>
   );
