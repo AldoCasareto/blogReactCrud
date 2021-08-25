@@ -1,0 +1,10 @@
+.bannerImg{
+    background-image: url(../../../Media/worldofk.svg);
+    height: 32vh;
+    background-repeat: no-repeat;
+ 
+}
+
+.textHeader{
+    font-family: luckiest guy
+}

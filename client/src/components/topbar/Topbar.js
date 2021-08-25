@@ -10,41 +10,31 @@ const Topbar = () => {
   };
 
   return (
-    <div className='top'>
-      <div className='topLeft'>
-        <i className='topIcon fab fa-twitter-square'></i>
-        <i className='topIcon fab fa-facebook-square'></i>
-        <i className='topIcon fab fa-pinterest'></i>
-        <i className='topIcon fab fa-instagram-square'></i>
-      </div>
-      <div className='topCenter'>
-        <ul className='topList'>
-          <li className='topListItem'>
-            <Link className='link' to='/'>
-              HOME
-            </Link>
-          </li>
-          <li className='topListItem'>
-            <Link className='link' to='/write'>
-              NEW COURSE
-            </Link>
-          </li>{' '}
-          <li className='topListItem'>
-            <Link className='link' to='/'>
-              ABOUT
-            </Link>
-          </li>
-          <li className='topListItem'>
-            <Link className='link' to='/'>
-              CONTACT
-            </Link>
-          </li>
-          <li className='topListItem' onClick={handleLogout}>
-            {user && 'LOGOUT'}
-          </li>
-        </ul>
-      </div>
-      <div className='topRight'>
+    <>
+      <div className="container d-flex justify-content-evenly align-items-center  rounded barBackground">
+        <h1>
+          Kidzpaß
+        </h1>
+        <Link className='link' to='/'>
+          Home
+        </Link>
+
+        {/*  <Link className='link' to='/write'>
+          NEW COURSE
+        </Link> */}
+
+        <Link className='link' to='/'>
+          About
+        </Link>
+
+        <Link className='link' to='/'>
+          Contact
+        </Link>
+
+        <li className='topListItem' onClick={handleLogout}>
+          {user && 'LOGOUT'}
+        </li>
+
         {user ? (
           <Link to='/settings'>
             <img className='topImg' src={user.profilePicture} alt='' />{' '}
@@ -53,19 +43,21 @@ const Topbar = () => {
           <ul className='topList'>
             <li className='topListItem'>
               <Link className='link' to='/login'>
-                LOGIN
+                Logout
               </Link>
             </li>
             <li className='topListItem'>
               <Link className='link' to='/register'>
-                REGISTER
+                Register
               </Link>
             </li>
           </ul>
         )}
         <i className='topSearchIcon fas fa-search'></i>
+
       </div>
-    </div>
+
+    </>
   );
 };
 

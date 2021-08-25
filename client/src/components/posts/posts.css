@@ -1,6 +1,9 @@
 .posts {
-    flex: 9;
-    display: flex;
-    flex-wrap: wrap;
-    margin: 20px;
+    
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 50px;
+    row-gap: 50px;
 }
+
+/* Add breakpoint for small display on phones...swap to display flex, column  */
