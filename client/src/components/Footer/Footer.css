@@ -1,0 +1,7 @@
+.fImage{
+    background-image: url(../../Media/Head.svg);
+    background-repeat: no-repeat ;
+    background-size:cover;
+    height: 18vh;
+    width: 80vw;
+}
