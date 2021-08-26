@@ -19,9 +19,9 @@ const Topbar = () => {
           Home
         </Link>
 
-        {/*  <Link className='link' to='/write'>
+        <Link className='link' to='/write'>
           NEW COURSE
-        </Link> */}
+        </Link>
 
         <Link className='link' to='/'>
           About
@@ -34,24 +34,32 @@ const Topbar = () => {
         <li className='topListItem' onClick={handleLogout}>
           {user && 'LOGOUT'}
         </li>
+        {/* 
+          <H6 className='topListItem' onClick={handleLogout}>
+          {user && 'LOGOUT'}
+          </H6>  */}
 
         {user ? (
           <Link to='/settings'>
             <img className='topImg' src={user.profilePicture} alt='' />{' '}
           </Link>
         ) : (
-          <ul className='topList'>
-            <li className='topListItem'>
+          <div className="d-flex justify-content-between " style={{ width: "150px" }}>
+            <h6>
               <Link className='link' to='/login'>
                 Logout
               </Link>
-            </li>
-            <li className='topListItem'>
+            </h6>
+
+            <h6>
+
               <Link className='link' to='/register'>
                 Register
               </Link>
-            </li>
-          </ul>
+            </h6>
+          </div>
+
+
         )}
         <i className='topSearchIcon fas fa-search'></i>
 

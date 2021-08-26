@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, { useEffect, useState, useContext } from 'react';
 import { useLocation } from 'react-router';
 import { Link } from 'react-router-dom';
-import './singlePost.css';
+/* import './singlePost.css'; */
 import { Context } from '../../context/Context';
 import Ratings from '../ratings/Ratings';
 
@@ -27,7 +27,7 @@ const SinglePost = () => {
         data: { username: user.username },
       });
       window.location.replace('/');
-    } catch (error) {}
+    } catch (error) { }
   };
 
   const handleUpdate = async () => {
@@ -40,7 +40,7 @@ const SinglePost = () => {
         duration,
       });
       setUpdated(false);
-    } catch (error) {}
+    } catch (error) { }
   };
 
   useEffect(() => {
@@ -56,11 +56,11 @@ const SinglePost = () => {
     getPost();
   }, [path]);
   return (
-    <div className='singlePost'>
-      <div className='singlePostWrapper'>
+    <div className='singlePost container rounded d-flex flex-column'>
+      <div className='singlePostWrapper '>
         {post.photo && (
           <img
-            className='singlePostImg'
+            className='w-50 h-25 singlePostImg'
             src={publicFolder + post.photo}
             alt=''
           />
@@ -114,16 +114,25 @@ const SinglePost = () => {
           ></textarea>
         ) : (
           <>
+
             <h4>Course Description</h4>
             <p className='singlePostDesc'> {description}</p>
-            <h4>Cost </h4>
-            <span> € {post.price}</span>
-            <h4>Duration: </h4>
-            <span>{post.duration} min </span>
-            <h4>When?</h4>
-            <span>
-              {date.toDateString()} {date.getHours()}:{date.getMinutes()}
-            </span>
+            <div className="d-flex justify-content-evenly">
+              <div className="d-flex flex-column">
+                <h4>Cost </h4>
+                <span> € {post.price}</span>
+              </div>
+              < div className="d-flex flex-column">
+                <h4>Duration: </h4>
+                <span>{post.duration} min </span>
+              </div>
+              <div className="d-flex flex-column">
+                <h4>When?</h4>
+                <span>
+                  {date.toDateString()} {date.getHours()}:{date.getMinutes()}
+                </span>
+              </div>
+            </div>
           </>
         )}
         {updated && (

@@ -37,24 +37,31 @@ const Register = () => {
   };
 
   return (
-    <div className='register'>
+    <div className='register bg-light w-50 mt-5 rounded'>
       <span className='registerTitle'>Register</span>
       <form action='' className='registerForm' onSubmit={handleRegistration}>
-        <label>Username</label>
-        <input
-          onChange={(e) => setUsername(e.target.value)}
-          autoFocus={true}
-          className='registerInput'
-          type='text'
-          placeholder='Enter your username...'
-        />
-        <label>Email</label>
-        <input
-          onChange={(e) => setEmail(e.target.value)}
-          className='registerInput'
-          type='text'
-          placeholder='Enter your email...'
-        />
+        <div className="row">
+
+          <div className="col-6 d-flex flex-column">
+            <label>Username</label>
+            <input
+              onChange={(e) => setUsername(e.target.value)}
+              autoFocus={true}
+              className='registerInput'
+              type='text'
+              placeholder='Enter your username...'
+            />
+          </div>
+          <div className="col-6 d-flex flex-column">
+            <label>Email</label>
+            <input
+              onChange={(e) => setEmail(e.target.value)}
+              className='registerInput'
+              type='text'
+              placeholder='Enter your email...'
+            />
+          </div>
+        </div>
         <label>Password</label>
         <input
           onChange={(e) => setPassword(e.target.value)}
@@ -63,8 +70,8 @@ const Register = () => {
           placeholder='Enter your password...'
         />
 
-        <select onChange={(e) => setTypeUser(e.target.value)}>
-          <option  className='registerInput' value=''>
+        <select className="bg-info w-75 mt-3 rounded align-self-center" onChange={(e) => setTypeUser(e.target.value)}>
+          <option className='registerInput' value=''>
             Are you a parent or instructor?
           </option>
           <option className='registerInput' value='Instructor'>
@@ -80,7 +87,7 @@ const Register = () => {
             <label>Short Bio</label>
             <textarea
               cols='20'
-              rows='10'
+              rows='2'
               onChange={(e) => setShortBio(e.target.value)}
               className='registerInput'
               type='text'
@@ -89,20 +96,26 @@ const Register = () => {
           </>
         ) : (
           <>
-            <label>Kid's name</label>
-            <input
-              className='registerInput'
-              type='text'
-              onChange={(e) => setKidName(e.target.value)}
-              placeholder='Kids name'
-            />
-            <label>Kids Age</label>
-            <input
-              type='number'
-              className='registerInput'
-              onChange={(e) => setKidAge(e.target.value)}
-              placeholder='Age'
-            />
+            <div className="row">
+              <div className="col-6 d-flex flex-column">
+                <label>Kid's name</label>
+                <input
+                  className='registerInput'
+                  type='text'
+                  onChange={(e) => setKidName(e.target.value)}
+                  placeholder='Kids name'
+                />
+              </div>
+              <div className="col-6 d-flex flex-column">
+                <label>Kids Age</label>
+                <input
+                  type='number'
+                  className='registerInput'
+                  onChange={(e) => setKidAge(e.target.value)}
+                  placeholder='Age'
+                />
+              </div>
+            </div>
           </>
         )}
 
@@ -110,7 +123,7 @@ const Register = () => {
           Register
         </button>
       </form>
-      <button className='registerLoginButton'>
+      <button className='registerLoginButton bg-info'>
         <Link className='link' to='/login'>
           Login
         </Link>
