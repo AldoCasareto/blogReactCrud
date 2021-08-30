@@ -1,7 +1,7 @@
 import React, { useState, useContext } from 'react';
 import { FaStar } from 'react-icons/fa';
 import './ratings.css';
-import { Input, Stack, Button, ButtonGroup } from '@chakra-ui/react';
+import { Input, Stack, Button } from '@chakra-ui/react';
 import { Context } from '../../context/Context';
 import axios from 'axios';
 

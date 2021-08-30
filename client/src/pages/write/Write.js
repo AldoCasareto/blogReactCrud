@@ -73,7 +73,6 @@ const Write = () => {
 
   return (
     <>
-<<<<<<< HEAD
       <div className='container w-100 rounded bg-info d-flex justify-content-evenly align-items-center'>
         <div className='w-50'>
           {file && (
@@ -91,19 +90,6 @@ const Write = () => {
           >
             <div className=''>
               <div className='d-flex justify-content-center mb-2'>
-=======
-      <div className="container w-100 rounded bg-info d-flex justify-content-evenly align-items-center">
-
-        <div className="w-50">
-          {file && (
-            <img className='writeImg w-75 h-75' src={URL.createObjectURL(file)} alt='' />
-          )}
-        </div>
-        <div className='write bg-info w-50 d-flex flex-colum'>
-          <form className=' container  bg-light rounded-pill' onSubmit={handlePost}>
-            <div className=''>
-              <div className="d-flex justify-content-center mb-2">
->>>>>>> 8bb854284fdb3346aacde12811602b8bdc398bf5
                 <label htmlFor='fileInput'>
                   <PhotoCameraIcon />
                 </label>
@@ -121,11 +107,7 @@ const Write = () => {
                   autoFocus={true}
                 />
               </div>
-<<<<<<< HEAD
               <div className='d-flex align-items-center justify-content-evenly  '>
-=======
-              <div className="d-flex align-items-center justify-content-evenly  ">
->>>>>>> 8bb854284fdb3346aacde12811602b8bdc398bf5
                 <textarea
                   onChange={(e) => {
                     setDescription(e.target.value);
@@ -133,12 +115,7 @@ const Write = () => {
                   placeholder='Course Description'
                   type='text'
                   className='writeInput writeText'
-<<<<<<< HEAD
                 ></textarea>
-=======
-                >
-                </textarea>
->>>>>>> 8bb854284fdb3346aacde12811602b8bdc398bf5
                 <textarea
                   onChange={(e) => {
                     setBio(e.target.value);
@@ -148,11 +125,7 @@ const Write = () => {
                   className='writeInput writeText'
                 ></textarea>
               </div>
-<<<<<<< HEAD
               <div className='d-flex  justify-content-evenly'>
-=======
-              <div className="d-flex  justify-content-evenly">
->>>>>>> 8bb854284fdb3346aacde12811602b8bdc398bf5
                 <input
                   className=' w-25'
                   onChange={(e) => setPrice(e.target.value)}
@@ -213,7 +186,6 @@ const Write = () => {
             </div>
             {format === 'inPerson' ? (
               <div>
-<<<<<<< HEAD
                 <input
                   className='writeInput '
                   type='text'
@@ -233,9 +205,6 @@ const Write = () => {
                   placeholder='Place of Interest'
                   onChange={(e) => setPlaceOfInterest(e.target.value)}
                 />
-=======
-                <input className='writeInput ' type='text' placeholder='Address' />
->>>>>>> 8bb854284fdb3346aacde12811602b8bdc398bf5
               </div>
             ) : null}
             <button type='submit' className='writeSubmit'>

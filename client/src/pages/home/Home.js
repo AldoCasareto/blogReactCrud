@@ -29,10 +29,6 @@ const Home = () => {
         <Carousel />
         <SideBar />
         <Posts posts={posts} />
-<<<<<<< HEAD
-=======
-
->>>>>>> 8bb854284fdb3346aacde12811602b8bdc398bf5
         <Header />
         <Footer />
       </div>
