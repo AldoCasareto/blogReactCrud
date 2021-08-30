@@ -29,7 +29,6 @@ const Home = () => {
         <Carousel />
         <SideBar />
         <Posts posts={posts} />
-
         <Header />
         <Footer />
       </div>

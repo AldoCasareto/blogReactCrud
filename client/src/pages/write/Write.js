@@ -26,6 +26,9 @@ const Write = () => {
   const [selectedDate, setSelectedDate] = React.useState(
     new Date('2021-08-22T21:11:54')
   );
+  const [address, setAddress] = useState('');
+  const [placeOfInterest, setPlaceOfInterest] = useState('');
+  const [areaCode, SetAreaCode] = useState('');
 
   console.log(selectedDate);
 
@@ -46,6 +49,9 @@ const Write = () => {
       bio,
       format,
       selectedDate,
+      address,
+      placeOfInterest,
+      areaCode,
     };
 
     if (file) {
@@ -57,27 +63,33 @@ const Write = () => {
 
       try {
         await axios.post('/upload', data);
-      } catch (error) { }
+      } catch (error) {}
     }
     try {
       const res = await axios.post('/posts', newPost);
       window.location.replace(`/post/${res.data._id}`);
-    } catch (error) { }
+    } catch (error) {}
   };
 
   return (
     <>
-      <div className="container w-100 rounded bg-info d-flex justify-content-evenly align-items-center">
-
-        <div className="w-50">
+      <div className='container w-100 rounded bg-info d-flex justify-content-evenly align-items-center'>
+        <div className='w-50'>
           {file && (
-            <img className='writeImg w-75 h-75' src={URL.createObjectURL(file)} alt='' />
+            <img
+              className='writeImg w-75 h-75'
+              src={URL.createObjectURL(file)}
+              alt=''
+            />
           )}
         </div>
         <div className='write bg-info w-50 d-flex flex-colum'>
-          <form className=' container  bg-light rounded-pill' onSubmit={handlePost}>
+          <form
+            className=' container  bg-light rounded-pill'
+            onSubmit={handlePost}
+          >
             <div className=''>
-              <div className="d-flex justify-content-center mb-2">
+              <div className='d-flex justify-content-center mb-2'>
                 <label htmlFor='fileInput'>
                   <PhotoCameraIcon />
                 </label>
@@ -95,7 +107,7 @@ const Write = () => {
                   autoFocus={true}
                 />
               </div>
-              <div className="d-flex align-items-center justify-content-evenly  ">
+              <div className='d-flex align-items-center justify-content-evenly  '>
                 <textarea
                   onChange={(e) => {
                     setDescription(e.target.value);
@@ -103,8 +115,7 @@ const Write = () => {
                   placeholder='Course Description'
                   type='text'
                   className='writeInput writeText'
-                >
-                </textarea>
+                ></textarea>
                 <textarea
                   onChange={(e) => {
                     setBio(e.target.value);
@@ -114,7 +125,7 @@ const Write = () => {
                   className='writeInput writeText'
                 ></textarea>
               </div>
-              <div className="d-flex  justify-content-evenly">
+              <div className='d-flex  justify-content-evenly'>
                 <input
                   className=' w-25'
                   onChange={(e) => setPrice(e.target.value)}
@@ -175,7 +186,25 @@ const Write = () => {
             </div>
             {format === 'inPerson' ? (
               <div>
-                <input className='writeInput ' type='text' placeholder='Address' />
+                <input
+                  className='writeInput '
+                  type='text'
+                  placeholder='Address'
+                  onChange={(e) => setAddress(e.target.value)}
+                />
+                <input className='writeInput ' type='text' placeholder='City' />
+                <input
+                  className='writeInput '
+                  type='number'
+                  placeholder='Area Code'
+                  onChange={(e) => SetAreaCode(e.target.value)}
+                />
+                <input
+                  className='writeInput '
+                  type='text'
+                  placeholder='Place of Interest'
+                  onChange={(e) => setPlaceOfInterest(e.target.value)}
+                />
               </div>
             ) : null}
             <button type='submit' className='writeSubmit'>
