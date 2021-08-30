@@ -40,6 +40,14 @@ const Post = ({ post }) => {
           <i class="far fa-hand-point-right"></i>
         </Link>
       </div>
+<<<<<<< HEAD
+=======
+
+
+
+
+
+>>>>>>> 8bb854284fdb3346aacde12811602b8bdc398bf5
       <span>
         {post.ratings.length > 0
           ? `${post.ratings.length} reviews`

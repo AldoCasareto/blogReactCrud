@@ -41,8 +41,14 @@ const Register = () => {
     <div className='register bg-light w-50 mt-5 rounded'>
       <span className='registerTitle'>Register</span>
       <form action='' className='registerForm' onSubmit={handleRegistration}>
+<<<<<<< HEAD
         <div className='row'>
           <div className='col-6 d-flex flex-column'>
+=======
+        <div className="row">
+
+          <div className="col-6 d-flex flex-column">
+>>>>>>> 8bb854284fdb3346aacde12811602b8bdc398bf5
             <label>Username</label>
             <input
               onChange={(e) => setUsername(e.target.value)}
@@ -52,7 +58,11 @@ const Register = () => {
               placeholder='Enter your username...'
             />
           </div>
+<<<<<<< HEAD
           <div className='col-6 d-flex flex-column'>
+=======
+          <div className="col-6 d-flex flex-column">
+>>>>>>> 8bb854284fdb3346aacde12811602b8bdc398bf5
             <label>Email</label>
             <input
               onChange={(e) => setEmail(e.target.value)}
@@ -98,8 +108,24 @@ const Register = () => {
           </div>
         </div>
 
+<<<<<<< HEAD
         
         {typeUser === 'Instructor' && (
+=======
+        <select className="bg-info w-75 mt-3 rounded align-self-center" onChange={(e) => setTypeUser(e.target.value)}>
+          <option className='registerInput' value=''>
+            Are you a parent or instructor?
+          </option>
+          <option className='registerInput' value='Instructor'>
+            Instructor
+          </option>
+          <option className='registerInput' value='Parent'>
+            Parent
+          </option>
+        </select>
+
+        {typeUser === 'Instructor' ? (
+>>>>>>> 8bb854284fdb3346aacde12811602b8bdc398bf5
           <>
             <label>Short Bio</label>
             <textarea
@@ -114,8 +140,13 @@ const Register = () => {
         )}
         {typeUser === 'Parent' && (
           <>
+<<<<<<< HEAD
             <div className='row'>
               <div className='col-6 d-flex flex-column'>
+=======
+            <div className="row">
+              <div className="col-6 d-flex flex-column">
+>>>>>>> 8bb854284fdb3346aacde12811602b8bdc398bf5
                 <label>Kid's name</label>
                 <input
                   className='registerInput'
@@ -124,7 +155,11 @@ const Register = () => {
                   placeholder='Kids name'
                 />
               </div>
+<<<<<<< HEAD
               <div className='col-6 d-flex flex-column'>
+=======
+              <div className="col-6 d-flex flex-column">
+>>>>>>> 8bb854284fdb3346aacde12811602b8bdc398bf5
                 <label>Kids Age</label>
                 <input
                   type='number'
