@@ -15,7 +15,7 @@ const SideBar = () => {
     fetchCategories();
   }, []);
   return (
-    <div className='container sidebarItem' >
+    <div className='container sidebarItem d-flex align-items-center' >
       <h1 className='sidebarTitle'>CATEGORIES</h1>
       <div className="miniGrid text-center">
         {categories.map((category) => (

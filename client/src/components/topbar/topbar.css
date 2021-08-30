@@ -1,7 +1,10 @@
-/*.top {
-  position: sticky;
+
+.topList {
+  list-style: none;
+
 }
 
+/*.
 .topLeft,
 .topRight {
   flex: 3;
@@ -29,13 +32,7 @@
   color: #444;
 }
 
-.topList {
-  display: flex;
-  justify-content: center;
-  margin: 0;
-  list-style: none;
-  padding: 0;
-}
+
 
 .topListItem {
   margin-right: 20px;
