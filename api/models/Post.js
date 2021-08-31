@@ -51,6 +51,22 @@ const PostSchema = new mongoose.Schema(
     ratings: {
       type: Array,
     },
+    address: {
+      type: String,
+      require: false,
+    },
+    placeOfInterest: {
+      type: String,
+      require: false,
+    },
+    format: {
+      type: String,
+      require: false,
+    },
+    areaCode:{
+      type: String,
+      require: false,
+    },
     // ratings:[ {
     //   type: Schema.Types.ObjectId,
     //   ref: 'Ratings',

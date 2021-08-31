@@ -18,10 +18,22 @@ const UserSchema = new mongoose.Schema(
     },
     profilePicture: {
       type: String,
-      default: "",
+      default: '',
     },
     shortBio: {
       type: String,
+      require: true,
+    },
+    kidName: {
+      type: String,
+      require: true,
+    },
+    typeUser: {
+      type: String,
+      require: true,
+    },
+    kidAge: {
+      type: Number,
       require: true,
     },
   },

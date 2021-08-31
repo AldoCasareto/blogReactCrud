@@ -7,6 +7,7 @@ import KidSpass from "../../Media/KidSpass.svg"
 
 const Topbar = () => {
   const { user, dispatch } = useContext(Context);
+  console.log(user);
   const handleLogout = () => {
     dispatch({ type: 'LOGOUT' });
   };
@@ -55,7 +56,6 @@ const Topbar = () => {
 
 
       </div>
-
     </>
   );
 };

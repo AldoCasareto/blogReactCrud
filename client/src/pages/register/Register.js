@@ -25,10 +25,11 @@ const Register = () => {
       password,
       email,
       shortBio,
+      typeUser,
       kidName,
       kidAge,
     };
-
+    console.log(newUser);
     try {
       const res = await axios.post('auth/register', newUser);
       setError(false);
