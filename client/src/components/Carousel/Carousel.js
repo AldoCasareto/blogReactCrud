@@ -9,6 +9,7 @@ import Carousel from "react-bootstrap/Carousel"
 
 import "./Carousel.css"
 export default function () {
+    // Source some images.. maybe in future updayes we can have an option in the teacher profile to upload images along with their class info
 
 
     return (
