@@ -5,16 +5,15 @@ import './topbar.css';
 
 const Topbar = () => {
   const { user, dispatch } = useContext(Context);
+  console.log(user);
   const handleLogout = () => {
     dispatch({ type: 'LOGOUT' });
   };
 
   return (
     <>
-      <div className="container d-flex justify-content-evenly align-items-center  rounded barBackground">
-        <h1>
-          Kidzpaß
-        </h1>
+      <div className='container d-flex justify-content-evenly align-items-center  rounded barBackground'>
+        <h1>Kidzpaß</h1>
         <Link className='link' to='/'>
           Home
         </Link>
@@ -31,7 +30,7 @@ const Topbar = () => {
           Contact
         </Link>
 
-        <li className='topListItem' onClick={handleLogout}>
+        <li className='topListItem topList' onClick={handleLogout}>
           {user && 'LOGOUT'}
         </li>
         {/* 
@@ -44,7 +43,10 @@ const Topbar = () => {
             <img className='topImg' src={user.profilePicture} alt='' />{' '}
           </Link>
         ) : (
-          <div className="d-flex justify-content-between " style={{ width: "150px" }}>
+          <div
+            className='d-flex justify-content-between '
+            style={{ width: '150px' }}
+          >
             <h6>
               <Link className='link' to='/login'>
                 Logout
@@ -52,19 +54,14 @@ const Topbar = () => {
             </h6>
 
             <h6>
-
               <Link className='link' to='/register'>
                 Register
               </Link>
             </h6>
           </div>
-
-
         )}
         <i className='topSearchIcon fas fa-search'></i>
-
       </div>
-
     </>
   );
 };
