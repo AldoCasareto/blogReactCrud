@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 /* import './singlePost.css'; */
 import { Context } from '../../context/Context';
 import Ratings from '../ratings/Ratings';
+import ModalBook from '../modal/ModalBook'
 
 const SinglePost = () => {
   const [post, setPost] = useState({});
@@ -17,12 +18,9 @@ const SinglePost = () => {
   const [updated, setUpdated] = useState(false);
   const [price, setPrice] = useState('');
   const [duration, setDuration] = useState('');
+  const [isOpen, setIsOpen] = useState(false)
 
   const date = new Date(post.selectedDate);
-  console.log('date', post.date);
-  console.log('format', post.format);
-  console.log('price', post.price);
-  console.log(post);
 
 
   const handleDelete = async () => {
@@ -136,8 +134,11 @@ const SinglePost = () => {
                 </span>
               </div>
 
-{/* offline data */}
-                <p>Course Format : {post.format === 'inPerson'? 'In Person' : 'Online'}</p>
+              {/* offline data */}
+              <p>
+                Course Format :{' '}
+                {post.format === 'inPerson' ? 'In Person' : 'Online'}
+              </p>
               {post.format === 'inPerson' && (
                 <div>
                   <p>{post.address}</p>
@@ -159,7 +160,12 @@ const SinglePost = () => {
           </button>
         )}
       </div>
-      <button type='submit' className='submit'>
+      <ModalBook date={date} isOpen={isOpen} setIsOpen={setIsOpen} post={post} />
+      {/* <Modal isOpen={isOpen} onRequestCall={() => setIsOpen(false)}>
+        <h1>Booking</h1>
+        <p>yes!</p>
+      </Modal> */}
+      <button type='submit' onClick={() => setIsOpen(true)} className='submit'>
         Book
       </button>
       <Ratings id={post._id} />
