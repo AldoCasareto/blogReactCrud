@@ -1,23 +1,43 @@
 .login {
-  height: calculate(100vh - 50px);
+height: 55vh;
+width: 40vw;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+
+  justify-content: space-between;
   align-items: center;
+  background-image: url(../../Media/Cardbg.svg);
+  border-radius: 60px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 7%;
+
 }
 
 .loginTitle {
   font-size: 50px;
+  transform: translateX(-55px);
+
+  font-family: 'Rampart One';
+  color: white;  
 }
 
 .loginForm {
-  margin-top: 20px;
+
   display: flex;
   flex-direction: column;
+  align-items: center;
+  border-radius: 60px;
+  height: 45vh;
+  width: 35vw;
+
 }
+
+
+
 
 .loginForm > label {
   margin: 10px 0;
+  color: white;
 }
 
 .loginInput {
@@ -25,17 +45,20 @@
   background-color: white;
   border: none;
   border-radius: 10px;
+  width: 65%;
+  
 }
 
 .loginButton {
   margin-top: 20px;
   cursor: pointer;
-  background-color: lightcoral;
+  background-color: #e69a1e;
   border: none;
   color: white;
   border-radius: 10px;
   padding: 10px;
   text-align: center;
+  width: 25%;
 }
 
 .loginButton:disabled {

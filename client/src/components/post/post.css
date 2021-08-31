@@ -58,14 +58,41 @@
   -webkit-box-orient: vertical;
 } */
 .imgTransform{
-  transform: translateX(-15px);
-}
-.cardText{font-family: 'Lato', sans-serif}
+  height: 150px;
+  width: 175px;
+  transform: translateX(-45px);
 
-.postTitle{font-family: 'Luckiest Guy';}
+ }
+.cardText{
+  font-family: 'Lato', sans-serif;
+  font-size: 0.75vw;
+}
+
+.postTitle{
+  font-family: 'Luckiest Guy';
+  font-size: 1.5vw;
+}
 
 .btnIcon{
-  color: #000000;
+  color: orange;
   margin-left: auto;
   font-size: 2.5em;
+  
+}  
+.post {
+  width: 500px;
+  height: 200px;
+  background-color: pink;
+}
+
+
+.starPull{
+  transform: translateY(25px);
+
+}
+
+.cardBody{
+  display: flex;
+  flex-direction: column;
+  align-content: space-around;
 }

@@ -1,37 +1,72 @@
-.register {
-  height: calculate(100vh - 50px);
+
+
+.wrap{
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+align-items: center;
+justify-content: space-evenly;
+background-image: url(../../Media/Cardbg.svg);
+  width: 80vw;
+  height: 65vh;
+  border-radius: 60px;
+  
+}
+
+.formWrap{
+  width: 45vw;
+  height: 45vh;
+  
+  display: flex;
   align-items: center;
 }
 
-.registerTitle {
-  font-size: 50px;
-  transform: translateY(-35px);
+.slideWrap{
+  width: 30vw;
+  height: 23vw;
+  align-self: center;
+
+
 }
+
+
+
+
+.registerTitle {
+  font-size: 3vw;
+  transform: translateX(-47px);
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+
+  font-family: 'Rampart One';
+  color: white;
+}
+
+
 
 .registerForm {
   margin-top: 20px;
   display: flex;
   flex-direction: column;
+  
 }
-
-.registerForm > label {
-  margin: 10px 0;
+label{
+  color: white;
 }
 
 .registerInput {
   padding: 10px;
-  background-color: white;
-  border: none;
+  
+  border: 1px solid black;
   border-radius: 10px;
 }
 
 .registerButton {
+  align-self: center;
+  width: 25%;
   margin-top: 20px;
   cursor: pointer;
-  background-color: teal;
+  background-color: #e69a1e;
   border: none;
   color: white;
   border-radius: 10px;
@@ -49,10 +84,5 @@
   border: none;
   color: white;
   border-radius: 10px;
-  padding: 10px;
-}
 
-select {
-  font-size:15px;
-  border: none;
 }

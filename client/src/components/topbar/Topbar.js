@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import { Context } from '../../context/Context';
 import './topbar.css';
 
+import KidSpass from "../../Media/KidSpass.svg"
+
 const Topbar = () => {
   const { user, dispatch } = useContext(Context);
   const handleLogout = () => {
@@ -11,57 +13,46 @@ const Topbar = () => {
 
   return (
     <>
-      <div className="container d-flex justify-content-evenly align-items-center  rounded barBackground">
-        <h1>
-          Kidzpaß
-        </h1>
-        <Link className='link' to='/'>
-          Home
-        </Link>
-
-        <Link className='link' to='/write'>
-          NEW COURSE
-        </Link>
-
-        <Link className='link' to='/'>
-          About
-        </Link>
-
-        <Link className='link' to='/'>
-          Contact
-        </Link>
-
-        <li className='topListItem' onClick={handleLogout}>
-          {user && 'LOGOUT'}
-        </li>
-        {/* 
-          <H6 className='topListItem' onClick={handleLogout}>
-          {user && 'LOGOUT'}
-          </H6>  */}
-
-        {user ? (
-          <Link to='/settings'>
-            <img className='topImg' src={user.profilePicture} alt='' />{' '}
+      <div className="container navWrap  ">
+        <img src={KidSpass} className="logo">
+        </img>
+        <div className="barHolder  ">
+          <Link className='link' to='/'>
+            Home
           </Link>
-        ) : (
-          <div className="d-flex justify-content-between " style={{ width: "150px" }}>
-            <h6>
-              <Link className='link' to='/login'>
-                Logout
-              </Link>
-            </h6>
+          {/* apply same logic to here as with logout/regisdtert */}
+          <Link className='link' to='/write'>
+            New Course
+          </Link>
+          <Link className='link' to='/'>
+            About
+          </Link>
+          <Link className='link' to='/'>
+            Contact
+          </Link>
+          <h6 className='topListItem' onClick={handleLogout}>
+            {user && 'Log out'}
+          </h6>
+          {user ? (
+            <Link to='/settings'>
+              <img className='topImg' src={user.profilePicture} alt='' />{' '}
+            </Link>
+          ) : (
+            <div className="d-flex justify-content-between " style={{ width: "150px" }}>
+              <h6>
+                <Link className='link' to='/login'>
+                  Logout
+                </Link>
+              </h6>
+              <h6>
+                <Link className='link' to='/register'>
+                  Register
+                </Link>
+              </h6>
+            </div>
+          )}
+        </div>
 
-            <h6>
-
-              <Link className='link' to='/register'>
-                Register
-              </Link>
-            </h6>
-          </div>
-
-
-        )}
-        <i className='topSearchIcon fas fa-search'></i>
 
       </div>
 
@@ -70,3 +61,6 @@ const Topbar = () => {
 };
 
 export default Topbar;
+
+
+/*  */
