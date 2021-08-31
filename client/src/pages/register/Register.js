@@ -23,10 +23,11 @@ const Register = () => {
       password,
       email,
       shortBio,
+      typeUser,
       kidName,
       kidAge,
     };
-
+    console.log(newUser);
     try {
       const res = await axios.post('auth/register', newUser);
       setError(false);
@@ -76,7 +77,7 @@ const Register = () => {
           <div>
             <label>
               <input
-                type="radio"
+                type='radio'
                 // className='registerInput'
                 value='Instructor'
                 onChange={(e) => setTypeUser(e.target.value)}
@@ -97,7 +98,6 @@ const Register = () => {
           </div>
         </div>
 
-        
         {typeUser === 'Instructor' && (
           <>
             <label>Short Bio</label>
