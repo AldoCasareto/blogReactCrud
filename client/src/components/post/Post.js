@@ -37,7 +37,7 @@ const Post = ({ post }) => {
         </div>
         <h6 className='hostDesc cardText'>{description}</h6>
         <Link className="btnIcon align-self-end" to={`/post/${_id}`} >
-          <i class="far fa-hand-point-right"></i>
+          <i className="far fa-hand-point-right"></i>
         </Link>
       </div>
       <span>

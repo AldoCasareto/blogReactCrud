@@ -10,6 +10,8 @@ const ModalBook = ({ isOpen, setIsOpen, post, date }) => {
     setConfirmation(true);
     setTimeout(() => {
       setConfirmation(false);
+      // setIsOpen(false)
+      window.location.replace(`/`);
     }, 5000);
     
   };
