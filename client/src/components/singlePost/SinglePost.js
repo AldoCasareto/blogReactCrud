@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 /* import './singlePost.css'; */
 import { Context } from '../../context/Context';
 import Ratings from '../ratings/Ratings';
+import ModalBook from '../modal/ModalBook'
 
 const SinglePost = () => {
   const [post, setPost] = useState({});
@@ -17,9 +18,10 @@ const SinglePost = () => {
   const [updated, setUpdated] = useState(false);
   const [price, setPrice] = useState('');
   const [duration, setDuration] = useState('');
+  const [isOpen, setIsOpen] = useState(false)
 
   const date = new Date(post.selectedDate);
-  console.log('date', date);
+
 
   const handleDelete = async () => {
     try {
@@ -27,7 +29,7 @@ const SinglePost = () => {
         data: { username: user.username },
       });
       window.location.replace('/');
-    } catch (error) { }
+    } catch (error) {}
   };
 
   const handleUpdate = async () => {
@@ -40,7 +42,7 @@ const SinglePost = () => {
         duration,
       });
       setUpdated(false);
-    } catch (error) { }
+    } catch (error) {}
   };
 
   useEffect(() => {
@@ -114,24 +116,37 @@ const SinglePost = () => {
           ></textarea>
         ) : (
           <>
-
             <h4>Course Description</h4>
             <p className='singlePostDesc'> {description}</p>
-            <div className="d-flex justify-content-evenly">
-              <div className="d-flex flex-column">
+            <div className='d-flex justify-content-evenly'>
+              <div className='d-flex flex-column'>
                 <h4>Cost </h4>
                 <span> € {post.price}</span>
               </div>
-              < div className="d-flex flex-column">
+              <div className='d-flex flex-column'>
                 <h4>Duration: </h4>
                 <span>{post.duration} min </span>
               </div>
-              <div className="d-flex flex-column">
+              <div className='d-flex flex-column'>
                 <h4>When?</h4>
                 <span>
                   {date.toDateString()} {date.getHours()}:{date.getMinutes()}
                 </span>
               </div>
+
+              {/* offline data */}
+              <p>
+                Course Format :{' '}
+                {post.format === 'inPerson' ? 'In Person' : 'Online'}
+              </p>
+              {post.format === 'inPerson' && (
+                <div>
+                  <p>{post.address}</p>
+                  <p>{post.areaCode}</p>
+                  <p>{post.city}</p>
+                  <p>{post.placeOfInterest}</p>
+                </div>
+              )}
             </div>
           </>
         )}
@@ -145,7 +160,12 @@ const SinglePost = () => {
           </button>
         )}
       </div>
-      <button type='submit' className='submit'>
+      <ModalBook date={date} isOpen={isOpen} setIsOpen={setIsOpen} post={post} />
+      {/* <Modal isOpen={isOpen} onRequestCall={() => setIsOpen(false)}>
+        <h1>Booking</h1>
+        <p>yes!</p>
+      </Modal> */}
+      <button type='submit' onClick={() => setIsOpen(true)} className='submit'>
         Book
       </button>
       <Ratings id={post._id} />

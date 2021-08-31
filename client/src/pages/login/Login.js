@@ -25,33 +25,36 @@ const Login = () => {
 
   console.log(isFetching);
   return (
-    <div className='login'>
+    <div className='login text-center'>
       <span className='loginTitle'>Login</span>
-      <form action='' className='loginForm' onSubmit={handleLogin}>
+      <form className='loginForm bg-dark' onSubmit={handleLogin}>
         <label>Username</label>
         <input
           ref={userRef}
           autoFocus={true}
-          className='loginInput'
+          className='loginInput text-center '
           type='text'
-          placeholder='Enter your username...'
+
         />
         <label>Password</label>
         <input
           ref={passwordRef}
-          className='loginInput'
+          className='loginInput text-center '
           type='password'
-          placeholder='Enter your password...'
+
         />
-        <button type='submit' className='loginButton' disabled={isFetching}>
+        <button type='submit' className='loginButton ' disabled={isFetching}>
           Login
         </button>
       </form>
-      <button className='loginRegisterButton'>
+
+      {/* Why is this here? */}
+
+      {/*   <button className='loginRegisterButton'>
         <Link className='link' to='/register'>
           Register
         </Link>
-      </button>
+      </button> */}
     </div>
   );
 };
